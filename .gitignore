@@ -29,3 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+###Database Password###
+/src/main/java/de/nsasse/microadvisor/database/DbPassword.java
