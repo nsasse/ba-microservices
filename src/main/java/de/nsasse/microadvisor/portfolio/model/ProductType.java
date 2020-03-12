@@ -1,4 +1,4 @@
-package de.nsasse.microadvisor.model;
+package de.nsasse.microadvisor.portfolio.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,10 +8,10 @@ import java.io.Serializable;
 public class ProductType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
+    @Column(name = "ID")
     private long id;
 
-    @Column(name="NAME")
+    @Column(name = "NAME")
     private String name;
 
     public ProductType() {

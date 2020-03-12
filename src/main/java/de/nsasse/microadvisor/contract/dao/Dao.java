@@ -1,4 +1,4 @@
-package de.nsasse.microadvisor.dao;
+package de.nsasse.microadvisor.contract.dao;
 
 import java.util.List;
 

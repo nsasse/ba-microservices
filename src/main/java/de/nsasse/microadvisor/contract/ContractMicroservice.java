@@ -1,24 +1,19 @@
-package de.nsasse.microadvisor;
+package de.nsasse.microadvisor.contract;
 
 import de.nsasse.microadvisor.dao.impl.ProductTypeDao;
 import de.nsasse.microadvisor.database.ConnectionTest;
-import de.nsasse.microadvisor.database.HibernateUtils;
-import de.nsasse.microadvisor.model.ProductType;
-import org.hibernate.Session;
+import de.nsasse.microadvisor.portfolio.model.ProductType;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.ManagedBean;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.util.List;
-import java.util.stream.Stream;
 
 @SpringBootApplication
 @ManagedBean
-public class MainApplication {
+public class ContractMicroservice {
     public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class, args);
+        SpringApplication.run(ContractMicroservice.class, args);
         ConnectionTest connect = new ConnectionTest();
         connect.connectToSqlServer();
 

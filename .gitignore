@@ -32,3 +32,4 @@ build/
 
 ###Database Password###
 /src/main/java/de/nsasse/microadvisor/database/DbPassword.java
+src/main/resources/hibernate.cfg.xml

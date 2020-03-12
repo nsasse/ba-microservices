@@ -1,4 +1,4 @@
-package de.nsasse.microadvisor;
+package de.nsasse.microadvisor.portfolio;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/example")
-public class TestController {
+public class TestPortfolioController {
 
-    @GetMapping("/hello-world")
+    @GetMapping("/portfolio-test")
     public ResponseEntity<String> get() {
-        return ResponseEntity.ok("Hello World!");
+        return ResponseEntity.ok("Hello Portfolio!");
     }
 }
