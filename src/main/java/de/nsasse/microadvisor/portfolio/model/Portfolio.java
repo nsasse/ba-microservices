@@ -1,6 +1,8 @@
 package de.nsasse.microadvisor.portfolio.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "PORTFOLIO")
@@ -16,6 +18,20 @@ public class Portfolio {
 
     @Column(name = "LEVEL_NOW")
     private long levelNow;
+
+    @ManyToMany
+    @JoinTable(
+            name = "PORTFOLIO_PRODUCT",
+            joinColumns = {@JoinColumn(name = "PORTFOLIO")},
+            inverseJoinColumns = {@JoinColumn(name = "PRODUCT")}
+    )
+    private List<Product> products;
+
+    @Column(name = "VERIFICATED")
+    private boolean verificated;
+
+    @Column(name = "ORDER_DATE")
+    private Timestamp orderDate;
 
     public long getId() {
         return id;

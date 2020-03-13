@@ -1,6 +1,7 @@
 package de.nsasse.microadvisor.portfolio.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "PRODUCT")
@@ -36,6 +37,9 @@ public class Product {
 
     @Column(name = "PERFORMANCE_THIS_YEAR")
     private Double performanceThisYear;
+
+    @ManyToMany(mappedBy = "products")
+    private List<Portfolio> portfolios;
 
     public long getId() {
         return id;
