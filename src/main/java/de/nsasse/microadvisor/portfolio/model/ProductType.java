@@ -2,6 +2,7 @@ package de.nsasse.microadvisor.portfolio.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "PRODUCT_TYPE")
@@ -14,8 +15,8 @@ public class ProductType implements Serializable {
     @Column(name = "TYPE")
     private String type;
 
-//    @OneToMany
-//    private List<Product> products;
+    @OneToMany(mappedBy = "productType")
+    private List<Product> products;
 
     public long getId() {
         return id;
@@ -31,5 +32,13 @@ public class ProductType implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }

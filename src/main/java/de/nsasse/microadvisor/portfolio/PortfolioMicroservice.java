@@ -23,8 +23,8 @@ public class PortfolioMicroservice {
                 .stream()
                 .forEach(product -> {
                     System.out.println(product.getName());
-                    //System.out.println(product.getRegion());
-                    //System.out.println(product.getProductType());
+                    System.out.println(product.getRegion().getName());
+                    System.out.println(product.getProductType().getType());
                 });
     }
 }

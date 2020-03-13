@@ -1,7 +1,6 @@
 package de.nsasse.microadvisor.portfolio.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "PRODUCT")
@@ -21,13 +20,13 @@ public class Product {
     @Column(name = "ISSUER")
     private String issuer;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "PRODUCT_TYPE")
-//    private ProductType productType;
-//
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "REGION")
-//    private Region region;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "PRODUCT_TYPE")
+    private ProductType productType;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "REGION")
+    private Region region;
 
     @Column(name = "INDEX_LEVEL")
     private Double indexLevel;
@@ -37,8 +36,6 @@ public class Product {
 
     @Column(name = "PERFORMANCE_THIS_YEAR")
     private Double performanceThisYear;
-
-    private List<Portfolio> portfolioa;
 
     public long getId() {
         return id;
@@ -72,6 +69,22 @@ public class Product {
         this.issuer = issuer;
     }
 
+    public ProductType getProductType() {
+        return productType;
+    }
+
+    public void setProductType(ProductType productType) {
+        this.productType = productType;
+    }
+
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
+    }
+
     public Double getIndexLevel() {
         return indexLevel;
     }
@@ -94,13 +107,5 @@ public class Product {
 
     public void setPerformanceThisYear(Double performanceThisYear) {
         this.performanceThisYear = performanceThisYear;
-    }
-
-    public List<Portfolio> getPortfolioa() {
-        return portfolioa;
-    }
-
-    public void setPortfolioa(List<Portfolio> portfolioa) {
-        this.portfolioa = portfolioa;
     }
 }

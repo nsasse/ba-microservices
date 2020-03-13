@@ -1,6 +1,7 @@
 package de.nsasse.microadvisor.portfolio.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "REGION")
@@ -11,11 +12,11 @@ public class Region {
     @Column(name = "ID")
     private long id;
 
-    @Column(name = "REGION_NAMR")
+    @Column(name = "REGION_NAME")
     private String name;
 
-//    @OneToMany
-//    private List<Product> products;
+    @OneToMany(mappedBy = "region")
+    private List<Product> products;
 
     public long getId() {
         return id;
@@ -31,5 +32,13 @@ public class Region {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }

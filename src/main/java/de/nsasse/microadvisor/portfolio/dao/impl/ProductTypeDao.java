@@ -1,7 +1,7 @@
 package de.nsasse.microadvisor.dao.impl;
 
 import de.nsasse.microadvisor.dao.Dao;
-import de.nsasse.microadvisor.portfolio.HibernateUtils;
+import de.nsasse.microadvisor.database.HibernateUtils;
 import de.nsasse.microadvisor.portfolio.model.ProductType;
 import org.hibernate.Session;
 
