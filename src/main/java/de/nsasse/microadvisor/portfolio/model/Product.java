@@ -18,9 +18,6 @@ public class Product {
     @Column(name = "PRODUCT_NAME")
     private String name;
 
-    @Column(name = "ISSUER")
-    private String issuer;
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "PRODUCT_TYPE")
     private ProductType productType;
@@ -32,8 +29,8 @@ public class Product {
     @Column(name = "INDEX_LEVEL")
     private Double indexLevel;
 
-    @Column(name = "NAV")
-    private Double nav;
+    @Column(name = "PERFORMANCE_TOTAL")
+    private Double performanceTotal;
 
     @Column(name = "PERFORMANCE_THIS_YEAR")
     private Double performanceThisYear;
@@ -65,14 +62,6 @@ public class Product {
         this.name = name;
     }
 
-    public String getIssuer() {
-        return issuer;
-    }
-
-    public void setIssuer(String issuer) {
-        this.issuer = issuer;
-    }
-
     public ProductType getProductType() {
         return productType;
     }
@@ -97,12 +86,12 @@ public class Product {
         this.indexLevel = indexLevel;
     }
 
-    public Double getNav() {
-        return nav;
+    public Double getPerformanceTotal() {
+        return performanceTotal;
     }
 
-    public void setNav(Double nav) {
-        this.nav = nav;
+    public void setPerformanceTotal(Double performanceTotal) {
+        this.performanceTotal = performanceTotal;
     }
 
     public Double getPerformanceThisYear() {

@@ -33,6 +33,9 @@ public class Portfolio {
     @Column(name = "ORDER_DATE")
     private Timestamp orderDate;
 
+    @Column(name = "PRODUCT_VALUE_JSON")
+    private String productValueJson;
+
     public Long getId() {
         return id;
     }
@@ -79,5 +82,13 @@ public class Portfolio {
 
     public void setOrderDate(Timestamp orderDate) {
         this.orderDate = orderDate;
+    }
+
+    public String getProductValueJson() {
+        return productValueJson;
+    }
+
+    public void setProductValueJson(String productValueJson) {
+        this.productValueJson = productValueJson;
     }
 }
