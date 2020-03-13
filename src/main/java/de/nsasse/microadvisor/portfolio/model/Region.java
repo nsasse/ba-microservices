@@ -1,18 +1,18 @@
 package de.nsasse.microadvisor.portfolio.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-@Table(name = "PRODUCT_TYPE")
-public class ProductType implements Serializable {
+@Table(name = "REGION")
+public class Region {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
 
-    @Column(name = "TYPE")
-    private String type;
+    @Column(name = "REGION_NAMR")
+    private String name;
 
 //    @OneToMany
 //    private List<Product> products;
@@ -25,11 +25,11 @@ public class ProductType implements Serializable {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name;
     }
 }

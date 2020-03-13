@@ -1,6 +1,7 @@
 package de.nsasse.microadvisor.portfolio.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "PRODUCT")
@@ -14,8 +15,30 @@ public class Product {
     @Column(name = "ISIN")
     private String isin;
 
-    public Product() {
-    }
+    @Column(name = "PRODUCT_NAME")
+    private String name;
+
+    @Column(name = "ISSUER")
+    private String issuer;
+
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "PRODUCT_TYPE")
+//    private ProductType productType;
+//
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "REGION")
+//    private Region region;
+
+    @Column(name = "INDEX_LEVEL")
+    private Double indexLevel;
+
+    @Column(name = "NAV")
+    private Double nav;
+
+    @Column(name = "PERFORMANCE_THIS_YEAR")
+    private Double performanceThisYear;
+
+    private List<Portfolio> portfolioa;
 
     public long getId() {
         return id;
@@ -31,5 +54,53 @@ public class Product {
 
     public void setIsin(String isin) {
         this.isin = isin;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getIssuer() {
+        return issuer;
+    }
+
+    public void setIssuer(String issuer) {
+        this.issuer = issuer;
+    }
+
+    public Double getIndexLevel() {
+        return indexLevel;
+    }
+
+    public void setIndexLevel(Double indexLevel) {
+        this.indexLevel = indexLevel;
+    }
+
+    public Double getNav() {
+        return nav;
+    }
+
+    public void setNav(Double nav) {
+        this.nav = nav;
+    }
+
+    public Double getPerformanceThisYear() {
+        return performanceThisYear;
+    }
+
+    public void setPerformanceThisYear(Double performanceThisYear) {
+        this.performanceThisYear = performanceThisYear;
+    }
+
+    public List<Portfolio> getPortfolioa() {
+        return portfolioa;
+    }
+
+    public void setPortfolioa(List<Portfolio> portfolioa) {
+        this.portfolioa = portfolioa;
     }
 }

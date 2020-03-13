@@ -2,7 +2,7 @@ package de.nsasse.microadvisor.contract.dao.impl;
 
 import de.nsasse.microadvisor.contract.dao.Dao;
 import de.nsasse.microadvisor.contract.model.User;
-import de.nsasse.microadvisor.database.HibernateUtils;
+import de.nsasse.microadvisor.portfolio.HibernateUtils;
 import org.hibernate.Session;
 
 import java.util.List;

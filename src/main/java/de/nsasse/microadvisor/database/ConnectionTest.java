@@ -8,7 +8,7 @@ public class ConnectionTest {
     public void connectToSqlServer() {
 
         //DbPasswords are not included in this project. You can replace it with the the correct password string or copy the java class from cd.
-        String connectionUrl = "jdbc:sqlserver://microadvisor.database.windows.net;databaseName=db01;user=nico;password=" + DbPasswords.getPassword();
+        String connectionUrl = "jdbc:sqlserver://microadvisor.database.windows.net;databaseName=db01ba;user=nico;password=" + DbPasswords.getPassword();
 
         try {
             // Load SQL Server JDBC driver and establish connection.

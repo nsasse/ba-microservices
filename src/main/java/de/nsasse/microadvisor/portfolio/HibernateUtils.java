@@ -1,4 +1,4 @@
-package de.nsasse.microadvisor.database;
+package de.nsasse.microadvisor.portfolio;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

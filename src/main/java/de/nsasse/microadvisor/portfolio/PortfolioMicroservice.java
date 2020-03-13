@@ -1,8 +1,8 @@
 package de.nsasse.microadvisor.portfolio;
 
-import de.nsasse.microadvisor.dao.impl.ProductTypeDao;
 import de.nsasse.microadvisor.database.ConnectionTest;
-import de.nsasse.microadvisor.portfolio.model.ProductType;
+import de.nsasse.microadvisor.portfolio.dao.impl.ProductDao;
+import de.nsasse.microadvisor.portfolio.model.Product;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -17,12 +17,14 @@ public class PortfolioMicroservice {
         ConnectionTest connect = new ConnectionTest();
         connect.connectToSqlServer();
 
-        ProductTypeDao productTypeDao = new ProductTypeDao();
-        List<ProductType> productTypeDaoList = productTypeDao.findAll();
-        productTypeDaoList
+        ProductDao productDao = new ProductDao();
+        List<Product> productDaoList = productDao.findAll();
+        productDaoList
                 .stream()
-                .forEach(productType -> {
-                    System.out.println(productType.getName());
+                .forEach(product -> {
+                    System.out.println(product.getName());
+                    //System.out.println(product.getRegion());
+                    //System.out.println(product.getProductType());
                 });
     }
 }
