@@ -8,7 +8,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private long id;
+    private Long id;
 
     @Column(name = "NAME")
     private String name;
@@ -18,6 +18,12 @@ public class User {
 
     @Column(name = "MAIL")
     private String mail;
+
+    @Column(name = "AGE")
+    private Integer age;
+
+    @Column(name = "PORTFOLIO_ID")
+    private Long portfolioId;
 
     public User() {
     }

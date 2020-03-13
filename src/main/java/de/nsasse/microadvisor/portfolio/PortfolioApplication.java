@@ -11,9 +11,9 @@ import java.util.List;
 
 @SpringBootApplication
 @ManagedBean
-public class PortfolioMicroservice {
+public class PortfolioApplication {
     public static void main(String[] args) {
-        SpringApplication.run(PortfolioMicroservice.class, args);
+        SpringApplication.run(PortfolioApplication.class, args);
         ConnectionTest connect = new ConnectionTest();
         connect.connectToSqlServer();
 

@@ -10,7 +10,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private long id;
+    private Long id;
 
     @Column(name = "ISIN")
     private String isin;
@@ -41,11 +41,11 @@ public class Product {
     @ManyToMany(mappedBy = "products")
     private List<Portfolio> portfolios;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -111,5 +111,13 @@ public class Product {
 
     public void setPerformanceThisYear(Double performanceThisYear) {
         this.performanceThisYear = performanceThisYear;
+    }
+
+    public List<Portfolio> getPortfolios() {
+        return portfolios;
+    }
+
+    public void setPortfolios(List<Portfolio> portfolios) {
+        this.portfolios = portfolios;
     }
 }

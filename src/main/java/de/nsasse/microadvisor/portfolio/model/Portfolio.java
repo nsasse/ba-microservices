@@ -11,13 +11,13 @@ public class Portfolio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private long id;
+    private Long id;
 
     @Column(name = "LEVEL_START")
-    private long levelStart;
+    private Long levelStart;
 
     @Column(name = "LEVEL_NOW")
-    private long levelNow;
+    private Long levelNow;
 
     @ManyToMany
     @JoinTable(
@@ -33,27 +33,51 @@ public class Portfolio {
     @Column(name = "ORDER_DATE")
     private Timestamp orderDate;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public long getLevelStart() {
+    public Long getLevelStart() {
         return levelStart;
     }
 
-    public void setLevelStart(long levelStart) {
+    public void setLevelStart(Long levelStart) {
         this.levelStart = levelStart;
     }
 
-    public long getLevelNow() {
+    public Long getLevelNow() {
         return levelNow;
     }
 
-    public void setLevelNow(long levelNow) {
+    public void setLevelNow(Long levelNow) {
         this.levelNow = levelNow;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public boolean isVerificated() {
+        return verificated;
+    }
+
+    public void setVerificated(boolean verificated) {
+        this.verificated = verificated;
+    }
+
+    public Timestamp getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Timestamp orderDate) {
+        this.orderDate = orderDate;
     }
 }

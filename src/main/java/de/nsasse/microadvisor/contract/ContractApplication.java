@@ -8,9 +8,9 @@ import javax.annotation.ManagedBean;
 
 @SpringBootApplication
 @ManagedBean
-public class ContractMicroservice {
+public class ContractApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ContractMicroservice.class, args);
+        SpringApplication.run(ContractApplication.class, args);
         ConnectionTest connect = new ConnectionTest();
         connect.connectToSqlServer();
 

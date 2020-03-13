@@ -10,7 +10,7 @@ public class ProductType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private long id;
+    private Long id;
 
     @Column(name = "TYPE")
     private String type;
@@ -18,11 +18,11 @@ public class ProductType implements Serializable {
     @OneToMany(mappedBy = "productType")
     private List<Product> products;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
