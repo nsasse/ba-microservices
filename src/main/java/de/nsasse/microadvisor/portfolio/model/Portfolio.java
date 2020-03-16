@@ -36,6 +36,9 @@ public class Portfolio {
     @Column(name = "PRODUCT_VALUE_JSON")
     private String productValueJson;
 
+    @Column(name = "RISK_VALUE")
+    private Integer riskValue;
+
     public Long getId() {
         return id;
     }
@@ -90,5 +93,13 @@ public class Portfolio {
 
     public void setProductValueJson(String productValueJson) {
         this.productValueJson = productValueJson;
+    }
+
+    public Integer getRiskValue() {
+        return riskValue;
+    }
+
+    public void setRiskValue(Integer riskValue) {
+        this.riskValue = riskValue;
     }
 }
