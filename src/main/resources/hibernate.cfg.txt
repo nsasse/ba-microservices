@@ -1,0 +1,1 @@
+add hibernate.cfg.xml here
