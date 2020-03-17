@@ -1,29 +1,29 @@
 package de.nsasse.microadvisor.portfolio.model;
 
-import de.nsasse.microadvisor.portfolio.model.Enum.ExpectedYeald;
+import de.nsasse.microadvisor.portfolio.model.Enum.ExpectedYield;
 import de.nsasse.microadvisor.portfolio.model.Enum.RiskTolerance;
 
 public class RiskProfile {
 
-    private ExpectedYeald expectedYeald;
+    private ExpectedYield expectedYield;
     private Integer duration;
     private RiskTolerance riskTolerance;
 
     public RiskProfile() {
     }
 
-    public RiskProfile(ExpectedYeald expectedYeald, Integer duration, RiskTolerance riskTolerance) {
-        this.expectedYeald = expectedYeald;
+    public RiskProfile(ExpectedYield expectedYield, Integer duration, RiskTolerance riskTolerance) {
+        this.expectedYield = expectedYield;
         this.duration = duration;
         this.riskTolerance = riskTolerance;
     }
 
-    public ExpectedYeald getExpectedYeald() {
-        return expectedYeald;
+    public ExpectedYield getExpectedYield() {
+        return expectedYield;
     }
 
-    public void setExpectedYeald(ExpectedYeald expectedYeald) {
-        this.expectedYeald = expectedYeald;
+    public void setExpectedYield(ExpectedYield expectedYield) {
+        this.expectedYield = expectedYield;
     }
 
     public Integer getDuration() {

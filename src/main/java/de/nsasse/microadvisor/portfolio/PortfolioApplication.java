@@ -2,7 +2,7 @@ package de.nsasse.microadvisor.portfolio;
 
 import de.nsasse.microadvisor.database.ConnectionTest;
 import de.nsasse.microadvisor.portfolio.dao.impl.ProductDao;
-import de.nsasse.microadvisor.portfolio.model.Enum.ExpectedYeald;
+import de.nsasse.microadvisor.portfolio.model.Enum.ExpectedYield;
 import de.nsasse.microadvisor.portfolio.model.Enum.RiskTolerance;
 import de.nsasse.microadvisor.portfolio.model.Product;
 import de.nsasse.microadvisor.portfolio.model.RiskProfile;
@@ -38,11 +38,11 @@ public class PortfolioApplication {
                 });
     }
 
-    private RiskProfile defaultRiskProfile = new RiskProfile(ExpectedYeald.OUTSTRIPPING_INFLATION, 5, RiskTolerance.LOW_RISK);
+    private RiskProfile defaultRiskProfile = new RiskProfile(ExpectedYield.OUTSTRIPPING_INFLATION, 5, RiskTolerance.LOW_RISK);
 
-    @GetMapping("/risk")
+    @GetMapping("/api/risk")
     public void getRisk(@RequestParam(value = "riskProfile") RiskProfile riskProfile) {
-        System.out.println(riskProfile.getExpectedYeald());
+        System.out.println(riskProfile.getExpectedYield());
         System.out.println(riskProfile.getDuration());
         System.out.println(riskProfile.getRiskTolerance());
     }
