@@ -2,10 +2,7 @@ package de.nsasse.microadvisor.portfolio;
 
 import de.nsasse.microadvisor.database.ConnectionTest;
 import de.nsasse.microadvisor.portfolio.dao.impl.ProductDao;
-import de.nsasse.microadvisor.portfolio.model.Enum.ExpectedYield;
-import de.nsasse.microadvisor.portfolio.model.Enum.RiskTolerance;
 import de.nsasse.microadvisor.portfolio.model.Product;
-import de.nsasse.microadvisor.portfolio.model.RiskProfile;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,12 +35,14 @@ public class PortfolioApplication {
                 });
     }
 
-    private RiskProfile defaultRiskProfile = new RiskProfile(ExpectedYield.OUTSTRIPPING_INFLATION, 5, RiskTolerance.LOW_RISK);
+    //private RiskProfile defaultRiskProfile = new RiskProfile(ExpectedYield.OUTSTRIPPING_INFLATION, 5, RiskTolerance.LOW_RISK);
 
+    //TODO - NOT WORKING
     @GetMapping("/api/risk")
-    public void getRisk(@RequestParam(value = "riskProfile") RiskProfile riskProfile) {
-        System.out.println(riskProfile.getExpectedYield());
-        System.out.println(riskProfile.getDuration());
-        System.out.println(riskProfile.getRiskTolerance());
+    public void getRisk(@RequestParam(name = "id") String string) {
+        //System.out.println(riskProfile.getExpectedYield());
+        //System.out.println(riskProfile.getDuration());
+        //System.out.println(riskProfile.getRiskTolerance());
+        System.out.println(string);
     }
 }

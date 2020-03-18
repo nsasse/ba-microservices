@@ -5,17 +5,17 @@ import de.nsasse.microadvisor.portfolio.model.Enum.RiskTolerance;
 
 public class RiskProfile {
 
+    private RiskTolerance riskTolerance;
     private ExpectedYield expectedYield;
     private Integer duration;
-    private RiskTolerance riskTolerance;
 
     public RiskProfile() {
     }
 
-    public RiskProfile(ExpectedYield expectedYield, Integer duration, RiskTolerance riskTolerance) {
+    public RiskProfile(RiskTolerance riskTolerance, ExpectedYield expectedYield, Integer duration) {
+        this.riskTolerance = riskTolerance;
         this.expectedYield = expectedYield;
         this.duration = duration;
-        this.riskTolerance = riskTolerance;
     }
 
     public ExpectedYield getExpectedYield() {
