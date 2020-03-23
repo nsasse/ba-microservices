@@ -38,6 +38,9 @@ public class Product {
     @ManyToMany(mappedBy = "products")
     private List<Portfolio> portfolios;
 
+    @ManyToMany(mappedBy = "products")
+    private List<Preorder> preorders;
+
     public Long getId() {
         return id;
     }

@@ -16,9 +16,6 @@ public class Portfolio {
     @Column(name = "LEVEL_START")
     private Long levelStart;
 
-    @Column(name = "LEVEL_NOW")
-    private Long levelNow;
-
     @ManyToMany
     @JoinTable(
             name = "PORTFOLIO_PRODUCT",
@@ -26,9 +23,6 @@ public class Portfolio {
             inverseJoinColumns = {@JoinColumn(name = "PRODUCT")}
     )
     private List<Product> products;
-
-    @Column(name = "VERIFICATED")
-    private boolean verificated;
 
     @Column(name = "ORDER_DATE")
     private Timestamp orderDate;
@@ -55,28 +49,12 @@ public class Portfolio {
         this.levelStart = levelStart;
     }
 
-    public Long getLevelNow() {
-        return levelNow;
-    }
-
-    public void setLevelNow(Long levelNow) {
-        this.levelNow = levelNow;
-    }
-
     public List<Product> getProducts() {
         return products;
     }
 
     public void setProducts(List<Product> products) {
         this.products = products;
-    }
-
-    public boolean isVerificated() {
-        return verificated;
-    }
-
-    public void setVerificated(boolean verificated) {
-        this.verificated = verificated;
     }
 
     public Timestamp getOrderDate() {
