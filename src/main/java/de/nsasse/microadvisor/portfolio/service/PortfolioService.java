@@ -1,45 +1,17 @@
 package de.nsasse.microadvisor.portfolio.service;
 
-import de.nsasse.microadvisor.dao.Dao;
-import de.nsasse.microadvisor.database.HibernateUtils;
 import de.nsasse.microadvisor.portfolio.model.Portfolio;
-import org.hibernate.Session;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class PortfolioService implements Dao<Portfolio> {
+public interface PortfolioService {
+    void create(Portfolio portfolio);
 
-    Session session = HibernateUtils.getSessionFactory().openSession();
+    void update(Portfolio portfolio);
 
-    @Override
-    public void create(Portfolio portfolio) {
-        session.beginTransaction();
-        session.save(portfolio);
-    }
+    void delete(Portfolio portfolio);
 
-    @Override
-    public void update(Portfolio portfolio) {
-        session.beginTransaction();
-        session.saveOrUpdate(portfolio);
-    }
+    List<Portfolio> findAll();
 
-    @Override
-    public void delete(Portfolio portfolio) {
-        session.beginTransaction();
-        session.delete(portfolio);
-    }
-
-    @Override
-    public List<Portfolio> findAll() {
-        session.beginTransaction();
-        return session.createQuery("SELECT p FROM Portfolio p", Portfolio.class).getResultList();
-    }
-
-    @Override
-    public Portfolio findById(long id) {
-        session.beginTransaction();
-        return session.createQuery("SELECT p FROM Portfolio p WHERE p.id = id", Portfolio.class).getSingleResult();
-    }
+    Portfolio findById(long id);
 }

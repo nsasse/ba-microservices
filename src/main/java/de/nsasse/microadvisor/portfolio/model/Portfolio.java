@@ -1,5 +1,7 @@
 package de.nsasse.microadvisor.portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -22,6 +24,7 @@ public class Portfolio {
             joinColumns = {@JoinColumn(name = "PORTFOLIO")},
             inverseJoinColumns = {@JoinColumn(name = "PRODUCT")}
     )
+    @JsonBackReference
     private List<Product> products;
 
     @Column(name = "ORDER_DATE")

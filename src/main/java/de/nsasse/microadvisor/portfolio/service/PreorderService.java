@@ -1,45 +1,17 @@
 package de.nsasse.microadvisor.portfolio.service;
 
-import de.nsasse.microadvisor.dao.Dao;
-import de.nsasse.microadvisor.database.HibernateUtils;
 import de.nsasse.microadvisor.portfolio.model.Preorder;
-import org.hibernate.Session;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class PreorderService implements Dao<Preorder> {
+public interface PreorderService {
+    void create(Preorder preorder);
 
-    Session session = HibernateUtils.getSessionFactory().openSession();
+    void update(Preorder preorder);
 
-    @Override
-    public void create(Preorder preorder) {
-        session.beginTransaction();
-        session.save(preorder);
-    }
+    void delete(Preorder preorder);
 
-    @Override
-    public void update(Preorder preorder) {
-        session.beginTransaction();
-        session.saveOrUpdate(preorder);
-    }
+    List<Preorder> findAll();
 
-    @Override
-    public void delete(Preorder preorder) {
-        session.beginTransaction();
-        session.delete(preorder);
-    }
-
-    @Override
-    public List<Preorder> findAll() {
-        session.beginTransaction();
-        return session.createQuery("SELECT p FROM Preorder p", Preorder.class).getResultList();
-    }
-
-    @Override
-    public Preorder findById(long id) {
-        session.beginTransaction();
-        return session.createQuery("SELECT p FROM Preorder p WHERE p.id = id", Preorder.class).getSingleResult();
-    }
+    Preorder findById(long id);
 }

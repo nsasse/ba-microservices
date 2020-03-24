@@ -2,7 +2,7 @@ package de.nsasse.microadvisor.portfolio;
 
 import de.nsasse.microadvisor.database.ConnectionTest;
 import de.nsasse.microadvisor.portfolio.model.Product;
-import de.nsasse.microadvisor.portfolio.service.ProductService;
+import de.nsasse.microadvisor.portfolio.service.impl.ProductServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -16,7 +16,7 @@ public class PortfolioApplication {
         connect.connectToSqlServer();
 
         //DB TEST
-        ProductService productService = new ProductService();
+        ProductServiceImpl productService = new ProductServiceImpl();
         List<Product> productDaoList = productService.findAll();
         productDaoList
                 .stream()
