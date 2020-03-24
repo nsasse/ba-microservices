@@ -1,13 +1,15 @@
-package de.nsasse.microadvisor.portfolio.dao.impl;
+package de.nsasse.microadvisor.portfolio.service;
 
 import de.nsasse.microadvisor.dao.Dao;
 import de.nsasse.microadvisor.database.HibernateUtils;
 import de.nsasse.microadvisor.portfolio.model.Portfolio;
 import org.hibernate.Session;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class PortfolioDao implements Dao<Portfolio> {
+@Service
+public class PortfolioService implements Dao<Portfolio> {
 
     Session session = HibernateUtils.getSessionFactory().openSession();
 

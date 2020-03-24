@@ -1,13 +1,15 @@
-package de.nsasse.microadvisor.portfolio.dao.impl;
+package de.nsasse.microadvisor.portfolio.service;
 
 import de.nsasse.microadvisor.dao.Dao;
 import de.nsasse.microadvisor.database.HibernateUtils;
 import de.nsasse.microadvisor.portfolio.model.Preorder;
 import org.hibernate.Session;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class PreorderDao implements Dao<Preorder> {
+@Service
+public class PreorderService implements Dao<Preorder> {
 
     Session session = HibernateUtils.getSessionFactory().openSession();
 

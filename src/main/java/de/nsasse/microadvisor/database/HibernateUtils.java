@@ -18,7 +18,7 @@ public class HibernateUtils {
                     .configure("hibernate.cfg.xml")
                     .build();
 
-            // Create a metadata sources using the specified service registry.
+            // Create a metadata sources using the specified controller registry.
             Metadata metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
 
             return metadata.getSessionFactoryBuilder().build();
