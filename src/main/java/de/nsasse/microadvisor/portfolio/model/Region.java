@@ -1,5 +1,7 @@
 package de.nsasse.microadvisor.portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,6 +18,7 @@ public class Region {
     private String name;
 
     @OneToMany(mappedBy = "region")
+    @JsonIgnore
     private List<Product> products;
 
     public Long getId() {

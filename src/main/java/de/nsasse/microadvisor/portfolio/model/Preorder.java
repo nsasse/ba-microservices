@@ -1,6 +1,6 @@
 package de.nsasse.microadvisor.portfolio.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,7 +23,7 @@ public class Preorder {
             joinColumns = {@JoinColumn(name = "PREORDER")},
             inverseJoinColumns = {@JoinColumn(name = "PRODUCT")}
     )
-    @JsonBackReference
+    @JsonIgnore
     private List<Product> products;
 
     public Long getId() {

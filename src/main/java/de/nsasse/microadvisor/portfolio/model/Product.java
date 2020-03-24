@@ -1,7 +1,6 @@
 package de.nsasse.microadvisor.portfolio.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,12 +22,10 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "PRODUCT_TYPE")
-    @JsonBackReference
     private ProductType productType;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "REGION")
-    @JsonBackReference
     private Region region;
 
     @Column(name = "INDEX_LEVEL")
@@ -41,11 +38,11 @@ public class Product {
     private Double performanceThisYear;
 
     @ManyToMany(mappedBy = "products")
-    @JsonManagedReference
+    @JsonIgnore
     private List<Portfolio> portfolios;
 
     @ManyToMany(mappedBy = "products")
-    @JsonManagedReference
+    @JsonIgnore
     private List<Preorder> preorders;
 
     public Long getId() {
