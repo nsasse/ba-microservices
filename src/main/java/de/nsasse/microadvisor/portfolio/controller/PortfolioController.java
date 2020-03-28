@@ -10,7 +10,6 @@ import javax.annotation.ManagedBean;
 @RequestMapping("/portfolio/")
 public class PortfolioController {
 
-    //TODO - NOT WORKING
     @CrossOrigin
     @PostMapping("/riskprofile")
     public void postRisk(@RequestBody RiskProfile riskProfile) {

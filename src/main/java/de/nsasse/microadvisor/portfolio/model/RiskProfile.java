@@ -7,12 +7,12 @@ public class RiskProfile {
 
     private RiskTolerance riskTolerance;
     private ExpectedYield expectedYield;
-    private Integer duration;
+    private Long duration;
 
     public RiskProfile() {
     }
 
-    public RiskProfile(RiskTolerance riskTolerance, ExpectedYield expectedYield, Integer duration) {
+    public RiskProfile(RiskTolerance riskTolerance, ExpectedYield expectedYield, Long duration) {
         this.riskTolerance = riskTolerance;
         this.expectedYield = expectedYield;
         this.duration = duration;
@@ -26,11 +26,11 @@ public class RiskProfile {
         this.expectedYield = expectedYield;
     }
 
-    public Integer getDuration() {
+    public Long getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(Long duration) {
         this.duration = duration;
     }
 
