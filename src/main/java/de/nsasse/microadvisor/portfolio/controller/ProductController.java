@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/product")
@@ -20,5 +21,15 @@ public class ProductController {
     public List<Product> getProducts() {
         System.out.println("Get request /product/all");
         return productService.findAll();
+    }
+
+    @GetMapping("/all/string")
+    public List<String> getProductStrings() {
+        System.out.println("Get request /product/all");
+        return productService
+                .findAll()
+                .stream()
+                .map(product -> product.getName())
+                .collect(Collectors.toList());
     }
 }
