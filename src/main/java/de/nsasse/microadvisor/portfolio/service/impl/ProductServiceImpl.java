@@ -47,13 +47,19 @@ public class ProductServiceImpl implements ProductService {
     public Product findById(long id) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        return session.createQuery("SELECT p FROM Product p WHERE p.id = id", Product.class).setMaxResults(1).uniqueResult();
+        return session.createQuery("SELECT p FROM Product p WHERE p.id = :idParam", Product.class)
+                .setParameter("idParam", id)
+                .setMaxResults(1)
+                .uniqueResult();
     }
 
     @Override
     public Product findByName(String name) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        return session.createQuery("SELECT p FROM Product p WHERE p.name = name", Product.class).setMaxResults(1).uniqueResult();
+        return session.createQuery("SELECT p FROM Product p WHERE p.name = :nameParam", Product.class)
+                .setParameter("nameParam", name)
+                .setMaxResults(1)
+                .uniqueResult();
     }
 }
