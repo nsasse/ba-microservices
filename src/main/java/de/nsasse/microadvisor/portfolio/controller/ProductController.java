@@ -3,9 +3,7 @@ package de.nsasse.microadvisor.portfolio.controller;
 import de.nsasse.microadvisor.portfolio.model.Product;
 import de.nsasse.microadvisor.portfolio.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,7 +27,14 @@ public class ProductController {
         return productService
                 .findAll()
                 .stream()
-                .map(product -> product.getName())
+                .map(Product::getName)
                 .collect(Collectors.toList());
+    }
+
+    @CrossOrigin
+    @GetMapping("/by/name")
+    public Product getProductByName(@RequestParam String search) {
+        System.out.println("Get request /by/name");
+        return productService.findByName(search);
     }
 }

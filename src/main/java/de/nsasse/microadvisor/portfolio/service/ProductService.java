@@ -14,4 +14,6 @@ public interface ProductService {
     List<Product> findAll();
 
     Product findById(long id);
+
+    Product findByName(String name);
 }

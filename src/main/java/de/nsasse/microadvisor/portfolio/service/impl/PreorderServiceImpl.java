@@ -40,6 +40,6 @@ public class PreorderServiceImpl implements PreorderService {
     @Override
     public Preorder findById(long id) {
         session.beginTransaction();
-        return session.createQuery("SELECT p FROM Preorder p WHERE p.id = id", Preorder.class).getSingleResult();
+        return session.createQuery("SELECT p FROM Preorder p WHERE p.id = id", Preorder.class).setMaxResults(1).uniqueResult();
     }
 }

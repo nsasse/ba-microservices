@@ -40,6 +40,6 @@ public class PortfolioServiceImpl implements PortfolioService {
     @Override
     public Portfolio findById(long id) {
         session.beginTransaction();
-        return session.createQuery("SELECT p FROM Portfolio p WHERE p.id = id", Portfolio.class).getSingleResult();
+        return session.createQuery("SELECT p FROM Portfolio p WHERE p.id = id", Portfolio.class).setMaxResults(1).uniqueResult();
     }
 }

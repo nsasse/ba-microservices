@@ -38,6 +38,6 @@ public class RegionServiceImpl implements RegionService {
     @Override
     public Region findById(long id) {
         session.beginTransaction();
-        return session.createQuery("SELECT p FROM Region p WHERE p.id = id", Region.class).getSingleResult();
+        return session.createQuery("SELECT p FROM Region p WHERE p.id = id", Region.class).setMaxResults(1).uniqueResult();
     }
 }
