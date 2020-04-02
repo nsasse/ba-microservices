@@ -1,37 +1,35 @@
 package de.nsasse.microadvisor.portfolio.service;
 
 import de.nsasse.microadvisor.portfolio.model.Enum.ExpectedYield;
-import de.nsasse.microadvisor.portfolio.model.Enum.Portfolioweighting;
-import de.nsasse.microadvisor.portfolio.model.Enum.RiskTolerance;
+import de.nsasse.microadvisor.portfolio.model.Enum.PortfolioWeighting;
+import de.nsasse.microadvisor.portfolio.model.RiskProfile;
 
 public class RiskAnalyser {
 
-    public Portfolioweighting analyseRisk(RiskTolerance riskTolerance, ExpectedYield expectedYield) {
-
-        switch (riskTolerance) {
-
+    public PortfolioWeighting analyseRisk(RiskProfile riskProfile) {
+        switch (riskProfile.getRiskTolerance()) {
             case HIGH_RISK:
-                if (expectedYield == ExpectedYield.YIELD_FIRST) {
-                    return Portfolioweighting.ADVISOR_75;
-                } else if (expectedYield == ExpectedYield.BALANCED_YIELD) {
-                    return Portfolioweighting.ADVISOR_50;
+                if (riskProfile.getExpectedYield() == ExpectedYield.YIELD_FIRST) {
+                    return PortfolioWeighting.ADVISOR_75;
+                } else if (riskProfile.getExpectedYield() == ExpectedYield.BALANCED_YIELD) {
+                    return PortfolioWeighting.ADVISOR_50;
                 } else {
-                    return Portfolioweighting.ADVISOR_25;
+                    return PortfolioWeighting.ADVISOR_25;
                 }
             case MID_RISK:
-                if (expectedYield == ExpectedYield.YIELD_FIRST || expectedYield == ExpectedYield.BALANCED_YIELD) {
-                    return Portfolioweighting.ADVISOR_25;
+                if (riskProfile.getExpectedYield() == ExpectedYield.YIELD_FIRST || riskProfile.getExpectedYield() == ExpectedYield.BALANCED_YIELD) {
+                    return PortfolioWeighting.ADVISOR_25;
                 } else {
-                    return Portfolioweighting.ADVISOR_0;
+                    return PortfolioWeighting.ADVISOR_0;
                 }
             case LOW_RISK:
-                if (expectedYield == ExpectedYield.YIELD_FIRST) {
-                    return Portfolioweighting.ADVISOR_25;
+                if (riskProfile.getExpectedYield() == ExpectedYield.YIELD_FIRST) {
+                    return PortfolioWeighting.ADVISOR_25;
                 } else {
-                    return Portfolioweighting.ADVISOR_0;
+                    return PortfolioWeighting.ADVISOR_0;
                 }
             default:
-                return Portfolioweighting.ADVISOR_0;
+                return PortfolioWeighting.ADVISOR_0;
         }
     }
 }

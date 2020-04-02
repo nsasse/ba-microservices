@@ -1,5 +1,5 @@
 package de.nsasse.microadvisor.portfolio.model.Enum;
 
-public enum Portfolioweighting {
+public enum PortfolioWeighting {
     ADVISOR_0, ADVISOR_25, ADVISOR_50, ADVISOR_75;
 }
