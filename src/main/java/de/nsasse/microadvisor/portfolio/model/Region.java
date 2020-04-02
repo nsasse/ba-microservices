@@ -6,15 +6,15 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "REGION")
+@Table(name = "region")
 public class Region {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private long id;
 
-    @Column(name = "REGION_NAME")
+    @Column(name = "region_name")
     private String name;
 
     @OneToMany(mappedBy = "region")

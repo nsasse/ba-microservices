@@ -7,13 +7,15 @@ public class ConnectionTest {
 
     public void connectToSqlServer() {
 
-        //DbPasswords are not included in this project. You can replace it with the the correct password string or copy the java class from cd.
-        String connectionUrl = "jdbc:sqlserver://microadvisor.database.windows.net;databaseName=db01ba;user=nico;password=" + DbPasswords.getPassword();
+        //DbPasswords are not included in this project. You can replace it with the the correct password string from bachelor thesis.
+        String connectionUrl = "jdbc:postgresql://nsasse.de:5432/ba";
+        String user = "ba";
+        String password = DbPasswords.getPassword();
 
         try {
-            // Load SQL Server JDBC driver and establish connection.
+            // Load postgres JDBC driver and establish connection.
             System.out.print("Connecting to SQL Server ... ");
-            try (Connection connection = DriverManager.getConnection(connectionUrl)) {
+            try (Connection connection = DriverManager.getConnection(connectionUrl, user, password)) {
                 System.out.println("Done.");
             }
         } catch (Exception e) {

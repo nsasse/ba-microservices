@@ -7,14 +7,14 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "PRODUCT_TYPE")
+@Table(name = "product_type")
 public class ProductType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "TYPE")
+    @Column(name = "type")
     private String type;
 
     @OneToMany(mappedBy = "productType")

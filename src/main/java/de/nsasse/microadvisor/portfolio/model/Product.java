@@ -6,35 +6,35 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "PRODUCT")
+@Table(name = "product")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "ISIN")
+    @Column(name = "isin")
     private String isin;
 
-    @Column(name = "PRODUCT_NAME")
+    @Column(name = "product_name")
     private String name;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "PRODUCT_TYPE")
+    @JoinColumn(name = "product_type")
     private ProductType productType;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "REGION")
+    @JoinColumn(name = "region")
     private Region region;
 
-    @Column(name = "INDEX_LEVEL")
+    @Column(name = "index_level")
     private Double indexLevel;
 
-    @Column(name = "PERFORMANCE_TOTAL")
+    @Column(name = "performance_total")
     private Double performanceTotal;
 
-    @Column(name = "PERFORMANCE_THIS_YEAR")
+    @Column(name = "performance_this_year")
     private Double performanceThisYear;
 
     @ManyToMany(mappedBy = "products")

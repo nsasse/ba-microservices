@@ -6,22 +6,22 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "PREORDER")
+@Table(name = "preorder")
 public class Preorder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "MAIL")
+    @Column(name = "mail")
     private String mail;
 
     @ManyToMany
     @JoinTable(
-            name = "PREORDER_PRODUCT",
-            joinColumns = {@JoinColumn(name = "PREORDER")},
-            inverseJoinColumns = {@JoinColumn(name = "PRODUCT")}
+            name = "preorder_product",
+            joinColumns = {@JoinColumn(name = "preorder")},
+            inverseJoinColumns = {@JoinColumn(name = "product")}
     )
     @JsonIgnore
     private List<Product> products;

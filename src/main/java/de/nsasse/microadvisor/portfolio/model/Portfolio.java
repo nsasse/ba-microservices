@@ -7,33 +7,33 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
-@Table(name = "PORTFOLIO")
+@Table(name = "portfolio")
 public class Portfolio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "LEVEL_START")
+    @Column(name = "level_start")
     private Long levelStart;
 
     @ManyToMany
     @JoinTable(
-            name = "PORTFOLIO_PRODUCT",
-            joinColumns = {@JoinColumn(name = "PORTFOLIO")},
-            inverseJoinColumns = {@JoinColumn(name = "PRODUCT")}
+            name = "portfolio_product",
+            joinColumns = {@JoinColumn(name = "portfolio")},
+            inverseJoinColumns = {@JoinColumn(name = "product")}
     )
     @JsonIgnore
     private List<Product> products;
 
-    @Column(name = "ORDER_DATE")
+    @Column(name = "order_date")
     private Timestamp orderDate;
 
-    @Column(name = "PRODUCT_VALUE_JSON")
+    @Column(name = "product_value_json")
     private String productValueJson;
 
-    @Column(name = "RISK_VALUE")
+    @Column(name = "risk_value")
     private Integer riskValue;
 
     public Long getId() {
