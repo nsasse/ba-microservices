@@ -1,13 +1,13 @@
-package de.nsasse.roboadvisor.contract.dao.impl;
+package de.nsasse.roboadvisor.contract.service.impl;
 
-import de.nsasse.roboadvisor.contract.dao.Dao;
 import de.nsasse.roboadvisor.contract.model.User;
+import de.nsasse.roboadvisor.contract.service.UserService;
 import de.nsasse.roboadvisor.database.HibernateUtils;
 import org.hibernate.Session;
 
 import java.util.List;
 
-public class UserDao implements Dao<User> {
+public class UserDao implements UserService {
 
     Session session = HibernateUtils.getSessionFactory().openSession();
 
