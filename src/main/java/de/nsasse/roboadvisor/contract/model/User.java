@@ -3,36 +3,45 @@ package de.nsasse.roboadvisor.contract.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "PRODUCT")
+@Table(name = "user_profile")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "NAME")
+    @Column(name = "name")
     private String name;
 
     @Column(name = "prename")
     private String prename;
 
-    @Column(name = "MAIL")
+    @Column(name = "mail")
     private String mail;
 
-    @Column(name = "AGE")
+    @Column(name = "age")
     private Integer age;
 
-    @Column(name = "PORTFOLIO_ID")
+    @Column(name = "portfolio_id")
     private Long portfolioId;
 
     public User() {
     }
 
-    public long getId() {
+    public User(String name, String prename, String mail, Integer age, Long portfolioId) {
+        this.name = name;
+        this.prename = prename;
+        this.mail = mail;
+        this.age = age;
+        this.portfolioId = portfolioId;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -58,5 +67,21 @@ public class User {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Long getPortfolioId() {
+        return portfolioId;
+    }
+
+    public void setPortfolioId(Long portfolioId) {
+        this.portfolioId = portfolioId;
     }
 }

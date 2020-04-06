@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user/")
+@RequestMapping("/contract/")
 public class UserController {
 
     @Autowired
     UserService userService;
 
     @CrossOrigin
-    @PostMapping("/profile")
+    @PostMapping("/userprofile")
     public void postProfile(@RequestBody User user) {
         userService.create(user);
     }
