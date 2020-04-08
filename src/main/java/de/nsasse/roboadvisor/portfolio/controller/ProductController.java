@@ -18,14 +18,12 @@ public class ProductController {
     @CrossOrigin
     @GetMapping("/all")
     public List<Product> getProducts() {
-        System.out.println("Get request /product/all");
         return productService.findAll();
     }
 
     @CrossOrigin
     @GetMapping("/all/string")
     public List<String> getProductStrings() {
-        System.out.println("Get request /product/all");
         return productService
                 .findAll()
                 .stream()
@@ -36,9 +34,9 @@ public class ProductController {
     @CrossOrigin
     @GetMapping("/by/name")
     public Product getProductByName(@RequestParam String search) {
-        System.out.println("Get request /by/name");
-        System.out.println(search);
-        System.out.println(productService.findByName(search));
         return productService.findByName(search);
     }
 }
+
+
+

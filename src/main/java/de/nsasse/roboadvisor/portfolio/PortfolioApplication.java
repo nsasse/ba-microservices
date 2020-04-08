@@ -12,3 +12,7 @@ public class PortfolioApplication {
         connect.connectToSqlServer();
     }
 }
+
+
+
+
