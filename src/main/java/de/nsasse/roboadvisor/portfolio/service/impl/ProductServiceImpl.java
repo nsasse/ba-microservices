@@ -14,28 +14,27 @@ public class ProductServiceImpl implements ProductService {
 
     SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
 
-
     @Override
-    public void create(Product Product) {
+    public void create(Product product) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.save(Product);
+        session.save(product);
         session.close();
     }
 
     @Override
-    public void update(Product Product) {
+    public void update(Product product) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.saveOrUpdate(Product);
+        session.saveOrUpdate(product);
         session.close();
     }
 
     @Override
-    public void delete(Product Product) {
+    public void delete(Product product) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.delete(Product);
+        session.delete(product);
         session.close();
     }
 

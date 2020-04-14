@@ -1,4 +1,4 @@
-package de.nsasse.roboadvisor.portfolio.controller;
+package de.nsasse.roboadvisor.portfolio.rest;
 
 import de.nsasse.roboadvisor.portfolio.model.Enum.PortfolioWeighting;
 import de.nsasse.roboadvisor.portfolio.model.RiskProfile;

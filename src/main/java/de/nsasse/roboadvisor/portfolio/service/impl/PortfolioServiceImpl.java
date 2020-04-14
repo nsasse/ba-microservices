@@ -4,6 +4,7 @@ import de.nsasse.roboadvisor.database.HibernateUtils;
 import de.nsasse.roboadvisor.portfolio.model.Portfolio;
 import de.nsasse.roboadvisor.portfolio.service.PortfolioService;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,35 +12,50 @@ import java.util.List;
 @Service
 public class PortfolioServiceImpl implements PortfolioService {
 
-    Session session = HibernateUtils.getSessionFactory().openSession();
+    SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
 
     @Override
     public void create(Portfolio portfolio) {
+        Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(portfolio);
+        session.close();
     }
 
     @Override
     public void update(Portfolio portfolio) {
+        Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.saveOrUpdate(portfolio);
+        session.close();
     }
 
     @Override
     public void delete(Portfolio portfolio) {
+        Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.delete(portfolio);
+        session.close();
     }
 
     @Override
     public List<Portfolio> findAll() {
+        Session session = sessionFactory.openSession();
         session.beginTransaction();
-        return session.createQuery("SELECT p FROM Portfolio p", Portfolio.class).getResultList();
+        List<Portfolio> portfolioList = session.createQuery("SELECT p FROM Portfolio p", Portfolio.class).getResultList();
+        session.close();
+        return portfolioList;
     }
 
     @Override
     public Portfolio findById(long id) {
+        Session session = sessionFactory.openSession();
         session.beginTransaction();
-        return session.createQuery("SELECT p FROM Portfolio p WHERE p.id = id", Portfolio.class).setMaxResults(1).uniqueResult();
+        Portfolio portfolio = session.createQuery("SELECT p FROM Portfolio p WHERE p.id = :idParam", Portfolio.class)
+                .setParameter("idParam", id)
+                .setMaxResults(1)
+                .uniqueResult();
+        session.close();
+        return portfolio;
     }
 }

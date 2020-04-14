@@ -12,6 +12,4 @@ public interface PreorderService {
     void delete(Preorder preorder);
 
     List<Preorder> findAll();
-
-    Preorder findById(long id);
 }

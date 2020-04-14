@@ -1,4 +1,4 @@
-package de.nsasse.roboadvisor.contract.controller;
+package de.nsasse.roboadvisor.contract.rest;
 
 import de.nsasse.roboadvisor.contract.model.User;
 import de.nsasse.roboadvisor.contract.service.UserService;
