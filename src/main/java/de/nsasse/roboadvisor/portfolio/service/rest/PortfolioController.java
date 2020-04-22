@@ -1,4 +1,4 @@
-package de.nsasse.roboadvisor.portfolio.rest;
+package de.nsasse.roboadvisor.portfolio.service.rest;
 
 import de.nsasse.roboadvisor.portfolio.model.Enum.PortfolioWeighting;
 import de.nsasse.roboadvisor.portfolio.model.RiskProfile;
@@ -19,5 +19,14 @@ public class PortfolioController {
     public PortfolioWeighting postRisk(@RequestBody RiskProfile riskProfile) {
         return new RiskAnalyser().analyseRisk(riskProfile);
     }
+
+    @CrossOrigin
+    @PostMapping("/addproduct")
+    public void addProductToPortfolio(@RequestBody String isin) {
+        System.out.println(isin);
+        //return new RiskAnalyser().analyseRisk(riskProfile);
+    }
+
+
 }
 

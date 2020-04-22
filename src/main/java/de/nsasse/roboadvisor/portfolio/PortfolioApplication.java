@@ -1,6 +1,6 @@
 package de.nsasse.roboadvisor.portfolio;
 
-import de.nsasse.roboadvisor.database.ConnectionTest;
+import de.nsasse.roboadvisor.database.DbConnectionTest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PortfolioApplication {
     public static void main(String[] args) {
         SpringApplication.run(PortfolioApplication.class, args);
-        ConnectionTest connect = new ConnectionTest();
-        connect.connectToSqlServer();
+        DbConnectionTest connect = new DbConnectionTest();
+        connect.connectToPostgreSQL();
     }
 }
 

@@ -3,9 +3,9 @@ package de.nsasse.roboadvisor.database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class ConnectionTest {
+public class DbConnectionTest {
 
-    public void connectToSqlServer() {
+    public void connectToPostgreSQL() {
 
         //DbPasswords are not included in this project. You can replace it with the the correct password string from bachelor thesis.
         String connectionUrl = "jdbc:postgresql://nsasse.de:5432/ba";

@@ -1,4 +1,4 @@
-package de.nsasse.roboadvisor.portfolio.rest;
+package de.nsasse.roboadvisor.portfolio.service.rest;
 
 import de.nsasse.roboadvisor.portfolio.model.Product;
 import de.nsasse.roboadvisor.portfolio.service.ProductService;

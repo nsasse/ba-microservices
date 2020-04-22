@@ -16,7 +16,10 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <java.version>1.10</java.version>
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <start-class>de.nsasse.roboadvisor.portfolio.PortfolioApplication</start-class>
     </properties>
 
     <dependencies>
@@ -43,16 +46,6 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>5.4.2.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.0-b170201.1204</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1</version>
         </dependency>
     </dependencies>
 
