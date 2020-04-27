@@ -1,6 +1,7 @@
 package de.nsasse.roboadvisor.portfolio.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import de.nsasse.roboadvisor.portfolio.model.Enum.PortfolioWeighting;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -30,11 +31,18 @@ public class Portfolio {
     @Column(name = "order_date")
     private Timestamp orderDate;
 
-    @Column(name = "product_value_json")
-    private String productValueJson;
+    @Column(name = "weighting")
+    private PortfolioWeighting weighting;
 
-    @Column(name = "risk_value")
-    private Integer riskValue;
+    public Portfolio() {
+    }
+
+    public Portfolio(Long levelStart, List<Product> products, Timestamp orderDate, PortfolioWeighting weighting) {
+        this.levelStart = levelStart;
+        this.products = products;
+        this.orderDate = orderDate;
+        this.weighting = weighting;
+    }
 
     public Long getId() {
         return id;
@@ -68,19 +76,11 @@ public class Portfolio {
         this.orderDate = orderDate;
     }
 
-    public String getProductValueJson() {
-        return productValueJson;
+    public PortfolioWeighting getWeighting() {
+        return weighting;
     }
 
-    public void setProductValueJson(String productValueJson) {
-        this.productValueJson = productValueJson;
-    }
-
-    public Integer getRiskValue() {
-        return riskValue;
-    }
-
-    public void setRiskValue(Integer riskValue) {
-        this.riskValue = riskValue;
+    public void setWeighting(PortfolioWeighting weighting) {
+        this.weighting = weighting;
     }
 }

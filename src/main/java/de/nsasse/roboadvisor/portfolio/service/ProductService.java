@@ -16,4 +16,6 @@ public interface ProductService {
     Product findById(long id);
 
     Product findByName(String name);
+
+    Product findByIsin(String isin);
 }

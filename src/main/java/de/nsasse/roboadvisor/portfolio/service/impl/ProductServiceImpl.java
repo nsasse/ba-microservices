@@ -70,4 +70,16 @@ public class ProductServiceImpl implements ProductService {
         session.close();
         return product;
     }
+
+    @Override
+    public Product findByIsin(String isin) {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        Product product = session.createQuery("SELECT p FROM Product p WHERE p.isin = :isinParam", Product.class)
+                .setParameter("isinParam", isin)
+                .setMaxResults(1)
+                .uniqueResult();
+        session.close();
+        return product;
+    }
 }

@@ -26,6 +26,11 @@ public class Preorder {
     @JsonIgnore
     private List<Product> products;
 
+    public Preorder(String mail, List<Product> products) {
+        this.mail = mail;
+        this.products = products;
+    }
+
     public Long getId() {
         return id;
     }
