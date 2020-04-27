@@ -28,6 +28,8 @@ public class PortfolioController {
     @Autowired
     ProductService productService;
 
+    Product productFromOptimizer;
+
     @CrossOrigin
     @PostMapping("/riskprofile")
     public PortfolioWeighting postRisk(@RequestBody RiskProfile riskProfile) {
@@ -37,8 +39,7 @@ public class PortfolioController {
     @CrossOrigin
     @PostMapping("/addproduct")
     public void addProductToPortfolio(@RequestBody String isin) {
-        System.out.println(isin);
-        //return new RiskAnalyser().analyseRisk(riskProfile);
+        productFromOptimizer = productService.findByIsin(isin);
     }
 
     //TODO
@@ -59,5 +60,16 @@ public class PortfolioController {
         //preorderService.create(new Preorder(, mail));
     }
 
+    @CrossOrigin
+    @PostMapping("/check-product")
+    public Product postProductFromOptimzer() {
+        System.out.println("Produkt: " + productFromOptimizer);
+        if (productFromOptimizer != null) {
+            Product sendproduct = productFromOptimizer;
+            productFromOptimizer = null;
+            return sendproduct;
+        }
+        return null;
+    }
 }
 
