@@ -42,7 +42,6 @@ public class PortfolioController {
         productFromOptimizer = productService.findByIsin(isin);
     }
 
-    //TODO
     @CrossOrigin
     @PostMapping("/products")
     public void postProducts(@RequestBody String[] isins) {
